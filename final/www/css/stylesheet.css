@@ -13,3 +13,15 @@ tr {
 	 width: 100%;
 	 
 }
+.startup{
+    padding: 14px 20px;
+    color: #fff;
+    font-size: 1.5em;
+    border-radius: 10px;
+    border: none;
+}
+.startup:hover{
+    opacity: .7;
+    cursor: pointer;
+    color: #ccc;
+}
