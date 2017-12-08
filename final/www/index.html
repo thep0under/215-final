@@ -71,7 +71,8 @@ function matchedThese(cell1, cell2) {
 	 if (allCorrect()) {
 	    gameOver = true;
 			scoreIt();
-			alert("game over - you WIN!");
+            var user = prompt("Enter yout name: ");
+			alert("game over - you WIN " + user + "!");
 	 }
 }
 
