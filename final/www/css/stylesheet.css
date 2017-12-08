@@ -2,15 +2,14 @@ table {
     border-collapse: collapse;
 		margin-left: auto;
 		margin-right: auto;
-    width: 50%;
+        width: 50%;
 }
 
 table, th, td {
     border: 1px solid black;
 }
 
-td {
+tr {
 	 width: 100%;
-	 height: 100%;
-	 text-align: center;
+	 
 }
