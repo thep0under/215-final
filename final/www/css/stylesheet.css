@@ -13,6 +13,13 @@ tr {
 	 width: 100%;
 	 
 }
+td{
+    width: 120px;
+	 height: 80px;
+	 text-align: center;
+	 vertical-align: middle;
+    
+}
 .startup{
     padding: 14px 20px;
     color: #fff;
