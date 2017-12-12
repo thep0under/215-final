@@ -1,7 +1,7 @@
 table {
     border-collapse: collapse;
 		margin:auto;
-       
+    
 }
 table, th, td {
     border: 1px solid black;
@@ -9,15 +9,13 @@ table, th, td {
 }
 
 tr {
-	 width: 100%;
-	 
+     width: 100%;
+     
 }
 td{
-
 	 width: 20%;
 	 text-align: center;
 	 vertical-align: middle;
-    
 }
 td:active{
     border: 3px solid #ff0000;
@@ -25,7 +23,7 @@ td:active{
 .startup{
     padding: 14px 20px;
     color: #fff;
-    font-size: 1.5em;
+    font-size: 2em;
     border-radius: 10px;
     border: none;
     background-color: maroon;
@@ -41,7 +39,14 @@ td:active{
 .table{
     width: 100%;
     margin: 0 auto;
-    
+}
+.instruct{
+    padding:1%;
+    text-align:center;
+    color:maroon;
+    background-color:lightyellow;
+    width:60%;
+    margin:auto
 }
 @media only screen and (min-width: 500px) {
     .startup{

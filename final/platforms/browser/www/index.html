@@ -84,13 +84,13 @@ function selected(cell) {
                }
                  else {
                   secondCell = cell;
-                    timer = setTimeout("hide()", 2000);
+                    timer = setTimeout("hide()", 500);
                         document.getElementById("scoreSpan").innerHTML = parseInt(document.getElementById("scoreSpan").innerHTML) + 1;
                }
           }
             else {
                 secondCell = cell;
-                timer = setTimeout("hide()", 2000);
+                timer = setTimeout("hide()", 500);
             }
      }
      firstClick = !firstClick;
@@ -228,7 +228,7 @@ function debug(msg) {
         app.initialize();
     </script>
     <p id="score" style="display: none">Misses: <span id="scoreSpan">0</span> <i>(lower is better)</i></p>
-<div id="instruct" style="padding:1%;text-align:center;color:maroon;background-color:lightyellow; width:60%; margin:auto">
+<div id="instruct" class="instruct">
     <b>Select a game level:</b><br>
     <input type="button" value="Easier" onclick="startUp(0)" class="startup">
     <input type="button" value="Harder" onclick="startUp(1)" class="startup">
