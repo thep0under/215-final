@@ -35,6 +35,7 @@
 <body>
 <div style="text-align:center">
 <script>
+var diffic;
 var indx = 0;
 document.write('<table summary="layout" class="table">');
 for (var row=0; row<6; row++) {
@@ -101,7 +102,7 @@ function matchedThese(cell1, cell2) {
         gameOver = true;
             scoreIt();
             var user = prompt("Enter yout name: ");
-            alert("game over - you WIN " + user + "!");
+            alert("game over - you WIN " + user + "! difficulty " + diffic);
          
      }
 }
@@ -153,6 +154,7 @@ function allCorrect() {
 */
 function startUp(level) {
    // unrandomized array
+    diffic=level;
    for (var i=0; i<30; i++) {
         images[i] = i;
             matched[i] = false;
