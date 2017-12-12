@@ -1,11 +1,11 @@
 table {
     border-collapse: collapse;
-		margin-left: auto;
-		margin-right: auto;
-        width: auto;
+		margin:auto;
+       
 }
 table, th, td {
     border: 1px solid black;
+    width: 50%;
 }
 
 tr {
@@ -13,8 +13,8 @@ tr {
 	 
 }
 td{
-    width: 120px;
-	 height: 80px;
+
+	 width: 20%;
 	 text-align: center;
 	 vertical-align: middle;
     
@@ -29,6 +29,9 @@ td:active{
     border-radius: 10px;
     border: none;
     background-color: maroon;
+    margin:auto;
+    margin-bottom:3px;
+    display:block;
 }
 .startup:hover{
     opacity: .7;
@@ -36,7 +39,20 @@ td:active{
     color: #ccc;
 }
 .table{
-    width: 45%;
+    width: 100%;
     margin: 0 auto;
     
+}
+@media only screen and (min-width: 500px) {
+    .startup{
+        display:inline;  
+    }
+    .table{
+        width:40%;
+    }
+}
+
+img{
+    width:100%;
+    margin:auto;
 }

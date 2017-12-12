@@ -228,12 +228,12 @@ function debug(msg) {
         app.initialize();
     </script>
     <p id="score" style="display: none">Misses: <span id="scoreSpan">0</span> <i>(lower is better)</i></p>
-<p id="instruct" style="color:maroon;background-color:lightyellow">
+<div id="instruct" style="padding:1%;text-align:center;color:maroon;background-color:lightyellow; width:60%; margin:auto">
     <b>Select a game level:</b><br>
-<input type="button" value="easier" onclick="startUp(0)" class="startup"><br><br>
-<input type="button" value="harder" onclick="startUp(1)" class="startup"><br><br>
-<input type="button" value="hardest" onclick="startUp(2)" class="startup"><br><br>
-</p>
+    <input type="button" value="Easier" onclick="startUp(0)" class="startup">
+    <input type="button" value="Harder" onclick="startUp(1)" class="startup">
+    <input type="button" value="Hardest" onclick="startUp(2)" class="startup">
+</div>
 <p id="result" style="display:none"></p>
 <p id="debug"></p>
 </div>
