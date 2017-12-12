@@ -45,7 +45,7 @@ td:active{
     text-align:center;
     color:maroon;
     background-color:lightyellow;
-    width:60%;
+    width:70%;
     margin:auto
 }
 @media only screen and (min-width: 500px) {
@@ -53,7 +53,15 @@ td:active{
         display:inline;  
     }
     .table{
-        width:40%;
+        width:70%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .startup{
+        display:inline;  
+    }
+    .table{
+        width:100%;
     }
 }
 
