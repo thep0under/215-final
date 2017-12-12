@@ -1,7 +1,7 @@
 table {
     border-collapse: collapse;
-		margin-left: auto;
-		margin-right: auto;
+        margin-left: auto;
+        margin-right: auto;
         width: auto;
 }
 table, th, td {
@@ -9,14 +9,14 @@ table, th, td {
 }
 
 tr {
-	 width: 100%;
-	 
+     width: 100%;
+     
 }
 td{
     width: 120px;
-	 height: 80px;
-	 text-align: center;
-	 vertical-align: middle;
+     height: 80px;
+     text-align: center;
+     vertical-align: middle;
     
 }
 td:active{
@@ -25,10 +25,11 @@ td:active{
 .startup{
     padding: 14px 20px;
     color: #fff;
-    font-size: 1.5em;
+    font-size: 2em;
     border-radius: 10px;
     border: none;
     background-color: maroon;
+    width: 33%;
 }
 .startup:hover{
     opacity: .7;
@@ -38,5 +39,18 @@ td:active{
 .table{
     width: 45%;
     margin: 0 auto;
-    
+}
+.instruct{
+    color:maroon;
+    background-color:lightyellow;
+    font-size: 1em;
+}
+@media screen and (max-width: 800px) and (min-width: 330px){
+    .startup{
+        width: 85%;
+    }
+    .center{
+        max-width: 100%;
+    }
+
 }
