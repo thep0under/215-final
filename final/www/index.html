@@ -84,13 +84,13 @@ function selected(cell) {
                }
                  else {
                   secondCell = cell;
-                    timer = setTimeout("hide()", 2000);
+                    timer = setTimeout("hide()", 500);
                         document.getElementById("scoreSpan").innerHTML = parseInt(document.getElementById("scoreSpan").innerHTML) + 1;
                }
           }
             else {
                 secondCell = cell;
-                timer = setTimeout("hide()", 2000);
+                timer = setTimeout("hide()", 500);
             }
      }
      firstClick = !firstClick;
