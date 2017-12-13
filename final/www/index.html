@@ -47,7 +47,7 @@ for (var row=0; row<6; row++) {
         document.write('</tr>');
 }
 document.write('</table>');
-
+var score;
 var gameOver = false;
 var playing = false;
 var images = [];
@@ -97,14 +97,26 @@ function selected(cell) {
 }
 
 function matchedThese(cell1, cell2) {
+   var winners=[];
+    var i=0;
    matched[parseInt(cell1)] = matched[parseInt(cell2)] = true;
      if (allCorrect()) {
         gameOver = true;
             scoreIt();
-            var user = prompt("Enter yout name: ");
+            var user = prompt("Enter your name: ");
             alert("game over - you WIN " + user + "! difficulty " + diffic);
+         if (typeof(Storage)!= "undefined"){
+                 localStorage.setItem("topUser" , user);
+                localStorage.setItem("topScore", score);
+                localStorage.setItem("difficulty", diffic);
+             }
+             else{
+                 alert('Storage type not defined!');
+             }
+             
+         }
          
-     }
+     
 }
 
 function pair(cell1, cell2) {
@@ -192,7 +204,7 @@ function startUp(level) {
 }
 
 function scoreIt(){
-   var score = parseInt(document.getElementById("scoreSpan").innerHTML);
+    score = parseInt(document.getElementById("scoreSpan").innerHTML);
      var msg = "";
      if (score <= 3)
          msg = "Skill <i>and</i> luck! A good combination.";
@@ -206,6 +218,7 @@ function scoreIt(){
          msg = "Not too shabby, but I bet you lose your keys.";
      else
          msg = "You should play again... if you can remember to.";
+    msg = msg + "<br><a href='scoreboard.html'>VIEW SCOREBOARD </a> "
      document.getElementById("score").innerHTML = msg;
 }
 
