@@ -3,8 +3,12 @@
 <head>
     <title> TOP SCORES</title>
     <script>
+    	var diff = localStorage.getItem("difficulty");
+    	var score = localStorage.getItem("topScore");
+    	var user = localStorage.getItem("topUser");
+    	if (true) {}
         window.onload=function(){
-            document.getElementById("wins").innerHTML=localStorage.getItem("topUser")+"<br> Score: " + localStorage.getItem("topScore")+"<br> Difficulty: " + localStorage.getItem("difficulty");
+            document.getElementById("wins").innerHTML="<h1>Top Score</h1><p class='score'>"+user+"</p><p class='score'>Score: " + score +"</p><p class='score'>Difficulty: " + diff + "</p>";
             console.log(localStorage.getItem("topUser"));}
     </script>
 </head>
