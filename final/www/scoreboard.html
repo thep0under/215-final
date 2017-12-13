@@ -1,12 +1,23 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-    <title> TOP SCORES</title>
+    <title>TOP SCORES</title>
     <script>
     	var diff = localStorage.getItem("difficulty");
     	var score = localStorage.getItem("topScore");
     	var user = localStorage.getItem("topUser");
-    	if (true) {}
+
+    	if (diff == '0') {
+    		diff = 'Easy';
+
+    	}
+    	else if(diff == '1'){
+    		diff = 'Medium';
+    	}
+    	else{
+			diff = 'Hard';
+    	}
+    	
         window.onload=function(){
             document.getElementById("wins").innerHTML="<h1>Top Score</h1><p class='score'>"+user+"</p><p class='score'>Score: " + score +"</p><p class='score'>Difficulty: " + diff + "</p>";
             console.log(localStorage.getItem("topUser"));}
