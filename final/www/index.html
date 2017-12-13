@@ -81,6 +81,7 @@ function selected(cell) {
                if(pair(cell, firstCell)) {
                   matchedThese(cell, firstCell);
                         debug("you matched: " + cell + " and " + firstCell);
+                   navigator.notification.vibrate(500);
                }
                  else {
                   secondCell = cell;
@@ -106,9 +107,13 @@ function matchedThese(cell1, cell2) {
             var user = prompt("Enter your name: ");
             alert("game over - you WIN " + user + "! difficulty " + diffic);
          if (typeof(Storage)!= "undefined"){
-                 localStorage.setItem("topUser" , user);
+             if (localStorage.getItem("topScore") > score){
+                localStorage.setItem("topUser" , user);
                 localStorage.setItem("topScore", score);
                 localStorage.setItem("difficulty", diffic);
+              }else{
+                  alert("You didn't get the top score this time!")
+              }
              }
              else{
                  alert('Storage type not defined!');
@@ -218,7 +223,7 @@ function scoreIt(){
          msg = "Not too shabby, but I bet you lose your keys.";
      else
          msg = "You should play again... if you can remember to.";
-    msg = msg + "<br><a href='scoreboard.html'>VIEW SCOREBOARD </a> "
+    msg = msg + "<br><a href='scoreboard.html'>VIEW SCOREBOARD </a><br><input type='button' onclick='location.reload()' value='Play again'>"
      document.getElementById("score").innerHTML = msg;
 }
 
