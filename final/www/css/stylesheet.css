@@ -39,6 +39,7 @@ td:active{
 .table{
     width: 100%;
     margin: 0 auto;
+    background-color: #fff;
 }
 .instruct{
     padding:1%;
