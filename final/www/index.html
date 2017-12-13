@@ -82,6 +82,7 @@ function selected(cell) {
                   matchedThese(cell, firstCell);
                         debug("you matched: " + cell + " and " + firstCell);
                    navigator.notification.vibrate(500);
+                   navigator.notification.beep(1);
                }
                  else {
                   secondCell = cell;
