@@ -69,8 +69,11 @@ img{
     width:100%;
     margin:auto;
 }
+body{
+    background-color: #ccc;
+}
 .score{
     font-size: 1.5em;
     text-align: center;
-    
+
 }
