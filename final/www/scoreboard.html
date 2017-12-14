@@ -14,6 +14,11 @@
     	console.log(diff);
     	console.log(score);
     	console.log(user);
+    	
+    	function clearitall(){
+    		localStorage.setItem("topScore", "0");
+    		alert("Score cleared");
+		}
 
     	if (diff == '0') {
     		diff = 'Easy';
@@ -38,7 +43,8 @@
     </div>
     
     <br>
-    <a href='index.html'><button class="startup">Return to Game</button></a>
+    <a href='index.html'><button class="startup" style="text-align: center;">Return to Game</button></a>
+    <input type="button" value="Clear" onclick="clearitall()" style="text-align: center;" class="startup">
     
    
 </body>
