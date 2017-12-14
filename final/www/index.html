@@ -48,6 +48,8 @@ for (var row=0; row<6; row++) {
         document.write('</tr>');
 }
 document.write('</table>');
+var lat;
+var longi;
 var score;
 var gameOver = false;
 var playing = false;
@@ -97,10 +99,8 @@ function selected(cell) {
      }
      firstClick = !firstClick;
 }
-function clearitall(){
-    localStorage.setItem("topScore", "0");
-    alert(parseFloat(localStorage.getItem("topScore")));
-}
+
+    
 function matchedThese(cell1, cell2) {
    var winners=[];
     var i=0;
@@ -115,6 +115,8 @@ function matchedThese(cell1, cell2) {
                 localStorage.setItem("topUser" , user);
                 localStorage.setItem("topScore", score);
                 localStorage.setItem("difficulty", diffic);
+                var options = {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
+                navigator.geolocation.getCurrentPosition(succ, fail, options);
                 alert("You got the TOP SCORE!")
               }else{
                   alert("You didn't get the top score this time!")
@@ -128,6 +130,18 @@ function matchedThese(cell1, cell2) {
          
      
 }
+function clearitall(){
+    localStorage.setItem("topScore", "0");
+    alert("Score cleared");
+}
+    function succ(position){
+        localStorage.setItem("lat", position.coords.latitude);
+        localStorage.setItem("longi", position.coords.longitude);
+        alert("Coordinates: "+position.coords.latitude + ", " + position.coords.longitude);
+    }
+    function fail(error){
+        alert(error.message);
+    }
 
 function pair(cell1, cell2) {
    if (images[parseInt(cell1)] == images[parseInt(cell2)]) {
@@ -238,7 +252,7 @@ function scoreIt(){
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
-        app.initialize();
+        //app.initialize();
     </script>
     <p id="score" style="display: none;">Misses: <span id="scoreSpan">0</span> <i>(lower is better)</i></p>
 <div id="instruct" class="instruct">
@@ -247,7 +261,7 @@ function scoreIt(){
     <input type="button" value="Easier" onclick="startUp(0)" class="startup">
     <input type="button" value="Harder" onclick="startUp(1)" class="startup">
     <input type="button" value="Hardest" onclick="startUp(2)" class="startup">
-    <input type='button' class='startup'onclick="clearitall()" value='clear'>
+    <input type="button" value="Clear" onclick="clearitall()" class="startup">
 </div>
 <p id="result" style="display:none"></p>
 </div>

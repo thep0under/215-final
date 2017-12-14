@@ -2,10 +2,18 @@
 <html>
 <head>
     <title>TOP SCORES</title>
+    <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+    <script src="cordova.js" type="text/javascript"></script>
     <script>
     	var diff = localStorage.getItem("difficulty");
     	var score = localStorage.getItem("topScore");
     	var user = localStorage.getItem("topUser");
+        var lat = localStorage.getItem("lat");
+        var longi = localStorage.getItem("longi");
+    
+    	console.log(diff);
+    	console.log(score);
+    	console.log(user);
 
     	if (diff == '0') {
     		diff = 'Easy';
@@ -19,16 +27,20 @@
     	}
     	
         window.onload=function(){
-            document.getElementById("wins").innerHTML="<h1>Top Score</h1><p class='score'>"+user+"</p><p class='score'>Score: " + score +"</p><p class='score'>Difficulty: " + diff + "</p>";
-            console.log(localStorage.getItem("topUser"));}
+            document.getElementById("wins").innerHTML="<h1 class='score'>Top Score</h1><p class='score'>"+user+"</p><p class='score'>Score: " + score +"</p><p class='score'>Difficulty: " + diff + "</p><p class='score'>Latitude: " + lat + "</p><p class='score'>Longitude: " + longi + "</p>";
+            //console.log(localStorage.getItem("topUser"));
+        }
     </script>
 </head>
 <body>
     <div id="wins">
        
     </div>
+    
     <br>
-    <a href='index.html'><button class='startup'>Return to Game</button></a>
+    <a href='index.html'><button class="startup">Return to Game</button></a>
+    
+   
 </body>
 
 </html>
