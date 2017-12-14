@@ -33,7 +33,8 @@
 </head>
 
 <body>
-<div style="text-align:center">
+    <h1 class="title">Match Those Pics!</h1>
+<div style="text-align:center;">
 <script>
 var diffic;
 var indx = 0;
@@ -80,7 +81,8 @@ function selected(cell) {
         if (cell != firstCell) {
                if(pair(cell, firstCell)) {
                   matchedThese(cell, firstCell);
-                        debug("you matched: " + cell + " and " + firstCell);
+                   navigator.notification.vibrate(500);
+                   navigator.notification.beep(1);
                }
                  else {
                   secondCell = cell;
@@ -104,11 +106,15 @@ function matchedThese(cell1, cell2) {
         gameOver = true;
             scoreIt();
             var user = prompt("Enter your name: ");
-            alert("game over - you WIN " + user + "! difficulty " + diffic);
+            alert("game over - you WIN " + user + "! Difficulty " + diffic);
          if (typeof(Storage)!= "undefined"){
-                 localStorage.setItem("topUser" , user);
+             if (localStorage.getItem("topScore") > score){
+                localStorage.setItem("topUser" , user);
                 localStorage.setItem("topScore", score);
                 localStorage.setItem("difficulty", diffic);
+              }else{
+                  alert("You didn't get the top score this time!")
+              }
              }
              else{
                  alert('Storage type not defined!');
@@ -200,7 +206,6 @@ function startUp(level) {
      document.getElementById("instruct").style.display = "none";
      document.getElementById("score").style.display = "block";
      playing = true;
-     //dump();
 }
 
 function scoreIt(){
@@ -218,20 +223,11 @@ function scoreIt(){
          msg = "Not too shabby, but I bet you lose your keys.";
      else
          msg = "You should play again... if you can remember to.";
-    msg = msg + "<br><a href='scoreboard.html'>VIEW SCOREBOARD </a> "
+    msg = msg + "<br><a href='scoreboard.html'><button class='startup'>VIEW SCOREBOARD </button></a><br><br><input type='button' class='startup'onclick='location.reload()' value='PLAY AGAIN'>"
      document.getElementById("score").innerHTML = msg;
 }
 
-function dump(){
-   var indx=0;
-   for (var row=0; row<6; row++)
-        for (var col=0; col<5; col++)
-           document.getElementById("debug").innerHTML += row + " " + col + " " + document.getElementById("cell" + indx++).src + "<br>";
-}
 
-function debug(msg) {
-   //document.getElementById("debug").innerHTML = msg + "<br>" + document.getElementById("debug").innerHTML;
-}
 
 </script>
 
@@ -240,15 +236,15 @@ function debug(msg) {
     <script type="text/javascript">
         app.initialize();
     </script>
-    <p id="score" style="display: none">Misses: <span id="scoreSpan">0</span> <i>(lower is better)</i></p>
+    <p id="score" style="display: none;">Misses: <span id="scoreSpan">0</span> <i>(lower is better)</i></p>
 <div id="instruct" class="instruct">
-    <b>Select a game level:</b><br>
+    <br>
+    <b style="font-size: 1em;">Select a game level:</b><br>
     <input type="button" value="Easier" onclick="startUp(0)" class="startup">
     <input type="button" value="Harder" onclick="startUp(1)" class="startup">
     <input type="button" value="Hardest" onclick="startUp(2)" class="startup">
 </div>
 <p id="result" style="display:none"></p>
-<p id="debug"></p>
 </div>
 </body>
 

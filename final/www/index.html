@@ -33,7 +33,7 @@
 </head>
 
 <body>
-    <h1 class="title">Match those Pics!</h1>
+    <h1 class="title">Match Those Pics!</h1>
 <div style="text-align:center;">
 <script>
 var diffic;
@@ -106,7 +106,7 @@ function matchedThese(cell1, cell2) {
         gameOver = true;
             scoreIt();
             var user = prompt("Enter your name: ");
-            alert("game over - you WIN " + user + "! <br>Difficulty " + diffic);
+            alert("game over - you WIN " + user + "! Difficulty " + diffic);
          if (typeof(Storage)!= "undefined"){
              if (localStorage.getItem("topScore") > score){
                 localStorage.setItem("topUser" , user);

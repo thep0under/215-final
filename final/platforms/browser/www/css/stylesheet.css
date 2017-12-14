@@ -20,6 +20,11 @@ td{
 td:active{
     border: 3px solid #ff0000;
 }
+.title{
+    text-align: center;
+    font-family: "Lucida Console";
+    font-variant: small-caps;
+}
 .startup{
     padding: 14px 20px;
     color: #fff;
@@ -30,6 +35,7 @@ td:active{
     margin:auto;
     margin-bottom:3px;
     display:block;
+    font-variant: small-caps;
 }
 .startup:hover{
     opacity: .7;
@@ -39,14 +45,16 @@ td:active{
 .table{
     width: 100%;
     margin: 0 auto;
+    background-color: #fff;
 }
 .instruct{
     padding:1%;
     text-align:center;
     color:maroon;
     background-color:lightyellow;
-    width:70%;
-    margin:auto
+    width:98%;
+    margin:auto;
+    overflow:hidden;
 }
 @media only screen and (min-width: 500px) {
     .startup{
@@ -68,4 +76,18 @@ td:active{
 img{
     width:100%;
     margin:auto;
+}
+body{
+    background-color: #ccc;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: #fff;
+}
+.score{
+    font-size: 1.5em;
+    text-align: center;
+
 }

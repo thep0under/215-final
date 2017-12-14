@@ -22,7 +22,8 @@ td:active{
 }
 .title{
     text-align: center;
-    font-family: fantasy;
+    font-family: "Lucida Console";
+    font-variant: small-caps;
 }
 .startup{
     padding: 14px 20px;
@@ -34,6 +35,7 @@ td:active{
     margin:auto;
     margin-bottom:3px;
     display:block;
+    font-variant: small-caps;
 }
 .startup:hover{
     opacity: .7;
@@ -77,6 +79,12 @@ img{
 }
 body{
     background-color: #ccc;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: #fff;
 }
 .score{
     font-size: 1.5em;
