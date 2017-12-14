@@ -134,6 +134,7 @@ function matchedThese(cell1, cell2) {
     function succ(position){
         localStorage.setItem("lat", position.coords.latitude);
         localStorage.setItem("longi", position.coords.longitude);
+        localStorage.setItem("time", position.timestamp);
         alert("Coordinates: "+position.coords.latitude + ", " + position.coords.longitude);
     }
     function fail(error){
@@ -255,9 +256,9 @@ function scoreIt(){
 <div id="instruct" class="instruct">
     <br>
     <p style="font-size: 1em;"><b>Select a game level:</b></p><br>
-    <input type="button" value="Easy" onclick="startUp(0)" class="startup">
-    <input type="button" value="Medium" onclick="startUp(1)" class="startup">
-    <input type="button" value="Hard" onclick="startUp(2)" class="startup">
+    <input type="button" value="Easiest" onclick="startUp(0)" class="startup">
+    <input type="button" value="Harder" onclick="startUp(1)" class="startup">
+    <input type="button" value="Hardest" onclick="startUp(2)" class="startup">
     
 </div>
 <p id="result" style="display:none"></p>

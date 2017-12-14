@@ -10,10 +10,15 @@
     	var user = localStorage.getItem("topUser");
         var lat = localStorage.getItem("lat");
         var longi = localStorage.getItem("longi");
-    
+        var time = localStorage.getItem("time");
     	console.log(diff);
     	console.log(score);
     	console.log(user);
+    	
+    	function clearitall(){
+    		localStorage.setItem("topScore", "0");
+    		alert("Score cleared");
+		}
 
     	if (diff == '0') {
     		diff = 'Easy';
@@ -27,7 +32,7 @@
     	}
     	
         window.onload=function(){
-            document.getElementById("wins").innerHTML="<h1 class='score'>Top Score</h1><p class='score'>"+user+"</p><p class='score'>Score: " + score +"</p><p class='score'>Difficulty: " + diff + "</p><p class='score'>Latitude: " + lat + "</p><p class='score'>Longitude: " + longi + "</p>";
+            document.getElementById("wins").innerHTML="<h1 class='score'>Top Score</h1><p class='score'>"+user+"</p><p class='score'>Score: " + score +"</p><p class='score'>Difficulty: " + diff + "</p><p class='score'>Latitude: " + lat + "</p><p class='score'>Longitude: " + longi + "</p><p class='score'>Time: " + time + "</p>";
             //console.log(localStorage.getItem("topUser"));
         }
     </script>
@@ -38,7 +43,8 @@
     </div>
     
     <br>
-    <a href='index.html'><button class="startup">Return to Game</button></a>
+    <a href='index.html'><button class="startup" style="text-align: center;">Return to Game</button></a>
+    <input type="button" value="Clear" onclick="clearitall()" style="text-align: center;" class="startup">
     
    
 </body>
