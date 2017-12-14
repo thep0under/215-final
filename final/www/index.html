@@ -97,7 +97,10 @@ function selected(cell) {
      }
      firstClick = !firstClick;
 }
-
+function clearitall(){
+    localStorage.setItem("topScore", "0");
+    alert(parseFloat(localStorage.getItem("topScore")));
+}
 function matchedThese(cell1, cell2) {
    var winners=[];
     var i=0;
@@ -106,12 +109,13 @@ function matchedThese(cell1, cell2) {
         gameOver = true;
             scoreIt();
             var user = prompt("Enter your name: ");
-            alert("game over - you WIN " + user + "! Difficulty " + diffic);
+            alert("game over - you WIN " + user + "! Difficulty " + diffic + " Score: " + score);
          if (typeof(Storage)!= "undefined"){
-             if (localStorage.getItem("topScore") > score){
+             if (parseFloat(localStorage.getItem("topScore")) > score || parseFloat(localStorage.getItem("topScore")) == 0){
                 localStorage.setItem("topUser" , user);
                 localStorage.setItem("topScore", score);
                 localStorage.setItem("difficulty", diffic);
+                alert("You got the TOP SCORE!")
               }else{
                   alert("You didn't get the top score this time!")
               }
@@ -243,6 +247,7 @@ function scoreIt(){
     <input type="button" value="Easier" onclick="startUp(0)" class="startup">
     <input type="button" value="Harder" onclick="startUp(1)" class="startup">
     <input type="button" value="Hardest" onclick="startUp(2)" class="startup">
+    <input type='button' class='startup'onclick="clearitall()" value='clear'>
 </div>
 <p id="result" style="display:none"></p>
 </div>
