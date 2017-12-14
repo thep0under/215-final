@@ -46,7 +46,7 @@ td:active{
     text-align:center;
     color:maroon;
     background-color:lightyellow;
-    width:70%;
+    width:100%;
     margin:auto
 }
 @media only screen and (min-width: 500px) {
