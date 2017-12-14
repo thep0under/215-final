@@ -20,6 +20,10 @@ td{
 td:active{
     border: 3px solid #ff0000;
 }
+.title{
+    text-align: center;
+    font-family: fantasy;
+}
 .startup{
     padding: 14px 20px;
     color: #fff;
