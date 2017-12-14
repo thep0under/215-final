@@ -109,7 +109,7 @@ function matchedThese(cell1, cell2) {
         gameOver = true;
             scoreIt();
             var user = prompt("Enter your name: ");
-            alert("game over - you WIN " + user + "! Difficulty " + diffic + " Score: " + score);
+            alert("game over - you WIN " + user + "!");
          if (typeof(Storage)!= "undefined"){
              if (parseFloat(localStorage.getItem("topScore")) > score || parseFloat(localStorage.getItem("topScore")) == 0){
                 localStorage.setItem("topUser" , user);
@@ -132,10 +132,11 @@ function matchedThese(cell1, cell2) {
 }
 
     function succ(position){
+        var theTime = new Date(position.timestamp);
         localStorage.setItem("lat", position.coords.latitude);
         localStorage.setItem("longi", position.coords.longitude);
-        localStorage.setItem("time", position.timestamp);
-        alert("Coordinates: "+position.coords.latitude + ", " + position.coords.longitude);
+        localStorage.setItem("time", theTime);
+        //alert("Coordinates: "+position.coords.latitude + ", " + position.coords.longitude+ ", " + theTime);
     }
     function fail(error){
         alert(error.message);
@@ -239,8 +240,8 @@ function scoreIt(){
          msg = "Not too shabby, but I bet you lose your keys.";
      else
          msg = "You should play again... if you can remember to.";
-    msg = msg + "<br><a href='scoreboard.html'><button class='startup'>VIEW SCOREBOARD </button></a><br><br><input type='button' class='startup'onclick='location.reload()' value='PLAY AGAIN'>"
      document.getElementById("score").innerHTML = msg;
+    document.getElementById("buttons").innerHTML = "<br><a href='scoreboard.html'><button class='startup'>VIEW SCOREBOARD </button></a><br><br><input type='button' class='startup' onclick='location.reload()' value='PLAY AGAIN'>";
 }
 
 
@@ -252,10 +253,11 @@ function scoreIt(){
     <script type="text/javascript">
         //app.initialize();
     </script>
-    <p id="score" style="display: none;" class="score">Misses: <span id="scoreSpan" class="score">0</span> <i class="score">(lower is better)</i></p>
+    <p id="score" style="display: none; font-size: 24px">Misses: <span id="scoreSpan">0</span> <i>(lower is better)</i></p>
+    <p id="buttons"></p>
 <div id="instruct" class="instruct">
     <br>
-    <p style="font-size: 1em;"><b>Select a game level:</b></p><br>
+    <span style="font-size: 24px;"><b>Select Difficulty:</b></span><br><br>
     <input type="button" value="Easiest" onclick="startUp(0)" class="startup">
     <input type="button" value="Harder" onclick="startUp(1)" class="startup">
     <input type="button" value="Hardest" onclick="startUp(2)" class="startup">
